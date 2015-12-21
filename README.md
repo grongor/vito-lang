@@ -71,7 +71,7 @@ methods and properties etc. You can also import any Python library and use them 
   that we managed to incorporate that into VitoLang too! Use the following expressions:
     - with: `bezpečnost nadevše, takže`, `tady bacha, `
     - open: `otevři mi tuten soubor`, `načti mi tohle`
-    - `a budem tomu říkat`, `a.k.a.`
+    - as: `a budem tomu říkat`, `a.k.a.`
 
 **Exceptions handling:**
 - To surround a block of code with exception-handling code, use expressions `Hele agilně`, `Prostě to zkusíme`
