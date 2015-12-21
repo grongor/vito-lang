@@ -10,8 +10,8 @@ import subprocess
 __author__ = 'jakub.chabek@heureka.cz'
 
 lang_definition = collections.OrderedDict()
-lang_definition['print'] = ['A to si piš']
-lang_definition['exit'] = ['Seru na to', 'Drž hubu']
+lang_definition['import'] = ['Budeme používat', 'No radši mi načti', 'Tohle se bude hodit']
+lang_definition['print'] = ['A to si piš', 'Vypiš tohle', 'Někam to zapiš', 'Volám Čuprovi']
 lang_definition['True'] = ['Možná', 'Asi']
 lang_definition['False'] = ['Je neni']
 lang_definition['and'] = ['a další věc', 'a ještě taky']
@@ -29,14 +29,21 @@ lang_definition['as'] = ['a budem tomu říkat', 'a.k.a.']
 lang_definition['try'] = ['Hele agilně', 'Prostě to zkusíme']
 lang_definition['except'] = ['Kozy? Tak když ti to hodí', 'Ty vole do prdele co s tím']
 lang_definition['finally'] = ['No a nakonec prostě', 'Hele v každym případě']
-lang_definition['function'] = ['Týhle části budem říkat', 'Takže poslouchej']
+lang_definition['def'] = ['Týhle části budem říkat', 'Takže poslouchej']
+lang_definition['return'] = ['Tady mám prachy na dobírku', 'Chci prostě to', 'Vybleju']
 lang_definition['class'] = ['Kravina s názvem', 'Nevim co je']
 lang_definition['for \\1 in \\2'] = ['Kdybych dostal (.+?) za každou (.+?) tak bych',
                                      'Tak vezmu všechny (.+?) z toho (.+?) a prostě']
 lang_definition['while'] = ['Dokuď je', 'Hele prostě tohle dělej dokuď']
+lang_definition['continue'] = ['Hele jdi dál', 'Ok tohle skipneme']
+lang_definition['break'] = ['Nemá cenu, srát na to', 'Hele prcáme to']
 lang_definition['8'] = ['O.S.M.', 'otočený nekonečno']
+lang_definition['pass'] = ['nechci', 'zbytečný']
+lang_definition['del'] = ['jdi do prdele', 'to už nechci']
+lang_definition['assert'] = ['Ne, já prostě chci, aby', 'Tohle bude takhle jinak prostě ne']
+lang_definition['exit'] = ['Seru na to', 'Drž hubu']
 
-whitespace = ['vole', 'kurva', 'do prdele', 'čůrák', 'čůráci', 'zasranej kokot', 'zasraný kokoti', 'tvoje máma',
+whitespace = ['vole', 'kurva', 'do piče', 'čůrák', 'čůráci', 'debilní kokoti', 'debilní kokot', 'tvoje máma',
               'tvoje bába']
 
 if len(sys.argv) != 2:
@@ -64,6 +71,11 @@ with open(file, 'r') as file:
         for alias in aliases:
             regexp = re.compile(alias)
             contents = regexp.sub(command, contents)
+
+for skip_word in whitespace:
+    contents = contents.replace(skip_word, '')
+
+print(contents)
 
 with tempfile.NamedTemporaryFile('w+b', 0) as file:
     file.write(contents.encode())
