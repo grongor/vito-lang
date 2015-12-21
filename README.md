@@ -99,7 +99,7 @@ methods and properties etc. You can also import any Python library and use them 
   the number 8 you must use either `O.S.M.` or `otočený nekonečno`
 
 **Whitespace:**
-- We understand the need to express yourself. You are creative person in the end. If you feel like you need to add
+- We understand the need to express yourself. You are creative person after all. If you feel like you need to add
   some more constructs you add those before or after any command as you feel like: `vole`, `kurva`, `do prdele`,
   `čůrák`, `čůráci`, `zasranej kokot`, `zasraný kokoti`, `tvoje máma`, `tvoje bába`
 
