@@ -75,8 +75,6 @@ with open(file, 'r') as file:
 for skip_word in whitespace:
     contents = contents.replace(skip_word, '')
 
-print(contents)
-
 with tempfile.NamedTemporaryFile('w+b', 0) as file:
     file.write(contents.encode())
 
