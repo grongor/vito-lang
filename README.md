@@ -61,7 +61,7 @@ methods and properties etc. You can also import any Python library and use them 
 
 **Variables and comparison:**
 - To assign value to a variable (=, :=) use `do {VARIABLE} teď narvu`, `tak {VARIABLE} bude třeba`,
-  `{VARIABLE} teď bude`, `{VARIABLE} bude přesně jako
+  `{VARIABLE} teď bude`, `{VARIABLE} bude přesně jako`
 - To check whether two expressions are same (==, eq) you can use `plus mínus stejný jako`, `stejný jako`, `cca`
 - To check whether two expressions are different (!=, ne) you can use `je jinačí než`, `není vůbec podobný`,
   `trochu jiný než`
