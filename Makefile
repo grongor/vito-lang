@@ -12,7 +12,7 @@ dependencies:
 	pip3 --version
 
 venv:
-	virtualenv venv
+	virtualenv -p python3 venv
 
 clean:
 	rm -rf venv
