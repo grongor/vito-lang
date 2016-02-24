@@ -63,7 +63,10 @@ if not file.endswith('.nohy'):
 with open(file, 'r') as file:
     contents = file.read()
     for command, aliases in lang_definition.items():
-        if command in contents:
+
+        reg = re.compile(r"\b({})\b".format(command.replace('\\', '\\\\')))
+
+        if reg.search(contents):
             print(contents)
             print('Unknown command "{0}" used. This is not a VitoLang construct.'.format(command))
             exit(1)
