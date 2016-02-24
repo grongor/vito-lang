@@ -3,8 +3,12 @@
 all: link dependencies venv
 
 link:
-	sudo ln -s ${PWD}/interpreter.py /usr/local/bin/chci
+	test -s /usr/local/bin/chci || sudo ln -s ${PWD}/interpreter.py /usr/local/bin/chci
 	chmod u+x ${PWD}/interpreter.py
+
+test: all
+	$(CURDIR)/venv/bin/python -m unittest "tests.py"
+
 
 dependencies:
 	virtualenv --version

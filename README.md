@@ -160,6 +160,13 @@ while not (a == 2):
 exit
 ```
 
+Tests
+---------------
+Yes, this actually has tests! You can run them by
+```
+make test
+```
+
 Minor negatives
 ---------------
 
