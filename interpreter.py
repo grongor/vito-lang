@@ -82,11 +82,7 @@ with tempfile.NamedTemporaryFile('w+b', 0) as file:
     file.write(contents.encode())
 
     process = subprocess.Popen(['{0}/venv/bin/python'.format(os.curdir), file.name],
-                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, errors = process.communicate()
+                               stdout=sys.stdout, stderr=sys.stderr)
+    sys.exit(process.wait())
 
-    if errors:
-        print(errors.decode())
-        exit(1)
 
-    print(output.decode().strip())
